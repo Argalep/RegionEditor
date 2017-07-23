@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{762CAB9F-5999-4C9B-AE93-791243B6ADB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RegionEditor</RootNamespace>
+    <AssemblyName>RegionEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RegionEditor.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>reigon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoxCommonLibrary\ColorDef.cs" />
+    <Compile Include="BoxCommonLibrary\FileIcon.cs" />
+    <Compile Include="BoxCommonLibrary\GenericNode.cs" />
+    <Compile Include="BoxCommonLibrary\Hues.cs" />
+    <Compile Include="BoxCommonLibrary\HuesChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BoxCommonLibrary\Localization\TextProvider.cs" />
+    <Compile Include="BoxCommonLibrary\MulManager.cs" />
+    <Compile Include="BoxCommonLibrary\NetUtility.cs" />
+    <Compile Include="BoxCommonLibrary\RecentIntList.cs" />
+    <Compile Include="BoxCommonLibrary\RecentList.cs" />
+    <Compile Include="BoxCommonLibrary\RecentStringList.cs" />
+    <Compile Include="BoxCommonLibrary\SearchResults.cs" />
+    <Compile Include="BoxCommonLibrary\Travel\Facet.cs" />
+    <Compile Include="BoxCommonLibrary\Travel\Location.cs" />
+    <Compile Include="BoxCommonLibrary\Utility.cs" />
+    <Compile Include="BoxCommonLibrary\ZLib.cs" />
+    <Compile Include="ErrMsgBox\ErrMsgBox.cs" />
+    <Compile Include="Geometry.cs" />
+    <Compile Include="MapViewer\Args.cs" />
+    <Compile Include="MapViewer\DrawObject.cs" />
+    <Compile Include="MapViewer\MapMulData.cs" />
+    <Compile Include="MapViewer\MapSizes.cs" />
+    <Compile Include="MapViewer\MapViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MapViewer\MapViewInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegEdOptions.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="UI\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FacetPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\NewFacet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RectPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RegionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Xml.cs" />
+    <EmbeddedResource Include="BoxCommonLibrary\HuesChart.resx">
+      <DependentUpon>HuesChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoxCommonLibrary\Travel\Location.resx">
+      <DependentUpon>Location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FacetPanel.resx">
+      <DependentUpon>FacetPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewFacet.resx">
+      <DependentUpon>NewFacet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RectPanel.resx">
+      <DependentUpon>RectPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegionEditor.resx">
+      <DependentUpon>RegionEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegionPanel.resx">
+      <DependentUpon>RegionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BoxCommonLibrary\Localization\.svn\all-wcprops" />
+    <None Include="BoxCommonLibrary\Localization\.svn\entries" />
+    <None Include="BoxCommonLibrary\Localization\.svn\text-base\TextProvider.cs.svn-base" />
+    <None Include="BoxCommonLibrary\Travel\.svn\all-wcprops" />
+    <None Include="BoxCommonLibrary\Travel\.svn\entries" />
+    <None Include="BoxCommonLibrary\Travel\.svn\prop-base\vssver.scc.svn-base" />
+    <None Include="BoxCommonLibrary\Travel\.svn\text-base\Facet.cs.svn-base" />
+    <None Include="BoxCommonLibrary\Travel\.svn\text-base\Location.cs.svn-base" />
+    <None Include="BoxCommonLibrary\Travel\.svn\text-base\Location.resx.svn-base" />
+    <None Include="BoxCommonLibrary\Travel\.svn\text-base\vssver.scc.svn-base" />
+    <None Include="BoxCommonLibrary\Travel\vssver.scc" />
+    <None Include="MapViewer\.svn\all-wcprops" />
+    <None Include="MapViewer\.svn\entries" />
+    <None Include="MapViewer\.svn\prop-base\vssver.scc.svn-base" />
+    <None Include="MapViewer\.svn\text-base\Args.cs.svn-base" />
+    <None Include="MapViewer\.svn\text-base\AssemblyInfo.cs.svn-base" />
+    <None Include="MapViewer\.svn\text-base\DrawObject.cs.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapMulData.cs.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapSizes.cs.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapViewer.cs.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapViewer.csproj.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapViewer.csproj.user.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapViewer.csproj.vspscc.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapViewer.resx.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapViewer.sln.svn-base" />
+    <None Include="MapViewer\.svn\text-base\MapViewInfo.cs.svn-base" />
+    <None Include="MapViewer\.svn\text-base\mssccprj.scc.svn-base" />
+    <None Include="MapViewer\.svn\text-base\Readme.htm.svn-base" />
+    <None Include="MapViewer\.svn\text-base\vssver.scc.svn-base" />
+    <None Include="MapViewer\Documentation\.svn\all-wcprops" />
+    <None Include="MapViewer\Documentation\.svn\entries" />
+    <None Include="MapViewer\Documentation\.svn\prop-base\vssver.scc.svn-base" />
+    <None Include="MapViewer\Documentation\.svn\text-base\Readme.htm.svn-base" />
+    <None Include="MapViewer\Documentation\.svn\text-base\vssver.scc.svn-base" />
+    <None Include="MapViewer\Documentation\vssver.scc" />
+    <None Include="MapViewer\mssccprj.scc" />
+    <None Include="MapViewer\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="MapViewer\vssver.scc" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MapViewer\Documentation\Readme.htm" />
+    <Content Include="MapViewer\Readme.htm" />
+    <Content Include="reigon.ico" />
+    <Content Include="UI\App.ico" />
+    <Content Include="UI\Region Editor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BoxCommonLibrary\Localization\.svn\prop-base\" />
+    <Folder Include="BoxCommonLibrary\Localization\.svn\props\" />
+    <Folder Include="BoxCommonLibrary\Localization\.svn\tmp\prop-base\" />
+    <Folder Include="BoxCommonLibrary\Localization\.svn\tmp\props\" />
+    <Folder Include="BoxCommonLibrary\Localization\.svn\tmp\text-base\" />
+    <Folder Include="BoxCommonLibrary\Travel\.svn\props\" />
+    <Folder Include="BoxCommonLibrary\Travel\.svn\tmp\prop-base\" />
+    <Folder Include="BoxCommonLibrary\Travel\.svn\tmp\props\" />
+    <Folder Include="BoxCommonLibrary\Travel\.svn\tmp\text-base\" />
+    <Folder Include="MapViewer\.svn\props\" />
+    <Folder Include="MapViewer\.svn\tmp\prop-base\" />
+    <Folder Include="MapViewer\.svn\tmp\props\" />
+    <Folder Include="MapViewer\.svn\tmp\text-base\" />
+    <Folder Include="MapViewer\Documentation\.svn\props\" />
+    <Folder Include="MapViewer\Documentation\.svn\tmp\prop-base\" />
+    <Folder Include="MapViewer\Documentation\.svn\tmp\props\" />
+    <Folder Include="MapViewer\Documentation\.svn\tmp\text-base\" />
+    <Folder Include="MapViewer\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
